@@ -1,0 +1,34 @@
+{
+  "name": "webcrawler",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -e ts,tsx --exec \"npm run build && node ./ts-build/index.js\"",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "prestart": "yarn build",
+    "start": "node --trace-deprecation ./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.5",
+    "@types/request": "^2.48.7",
+    "babel-preset-esnext": "^1.1.3",
+    "babel-register": "^6.26.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "dotenv": "^10.0.0",
+    "log4js": "^6.3.0",
+    "pg": "^8.7.1",
+    "request": "^2.88.2",
+    "typeorm": "^0.2.41"
+  },
+  "babel": {
+    "presets": [
+      "esnext"
+    ],
+    "sourceMaps": true,
+    "retainLines": true
+  }
+}
